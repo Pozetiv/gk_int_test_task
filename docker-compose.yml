@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+      args:
+        user: roman
+        uid: 1000
+      context: ./
+    image: gk_init
+    container_name: gk_init
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
